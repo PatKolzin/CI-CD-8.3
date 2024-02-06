@@ -198,7 +198,7 @@ OS name: "linux", version: "5.15.133.1-microsoft-standard-wsl2", arch: "amd64", 
     <repository>
       <id>my-repo</id>
       <name>maven-public</name>
-      <url>http://178.154.205.189:8081/repository/maven-public/</url>
+      <url>http://130.193.51.67:8081/repository/maven-public/</url>
     </repository>
   </repositories>
   <dependencies>
