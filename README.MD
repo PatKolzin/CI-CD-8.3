@@ -186,8 +186,6 @@ OS name: "linux", version: "5.15.133.1-microsoft-standard-wsl2", arch: "amd64", 
 
 1. Поменяйте в `pom.xml` блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
 
-[pom.xml](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/mvn/pom.xml)
-
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -270,33 +268,6 @@ pat@olZion:~/.m2/repository/netology/java/8_282/
 4. В ответе пришлите исправленный файл `pom.xml`.
 
 [pom.xml](https://github.com/PatKolzin/CI-CD-8.3/blob/main/files/pom.xml)
-
-```
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
- 
-  <groupId>com.netology.app</groupId>
-  <artifactId>simple-app</artifactId>
-  <version>1.0-SNAPSHOT</version>
-   <repositories>
-    <repository>
-      <id>my-repo</id>
-      <name>maven-public</name>
-      <url>http://178.154.205.189:8081/repository/maven-public/</url>
-    </repository>
-  </repositories>
-  <dependencies>
-     <dependency>
-      <groupId>netology</groupId>
-      <artifactId>java</artifactId>
-      <version>8_282</version>
-      <classifier>distrib</classifier>
-      <type>tar.gz</type>
-    </dependency>
-  </dependencies>
-</project>
-```
 
 
 ---
