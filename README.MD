@@ -53,65 +53,27 @@ all:
 
 3. Сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
 
-```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example/sonar-scanner-5.0.1.3006-linux/bin# export PATH=$(pwd):$PATH
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example#
-```
-
 4. Проверьте `sonar-scanner --version`.
 
-```
-pat@olZion:~/1home/cicd/dz$ sonar-scanner --version
-INFO: Scanner configuration file: /home/pat/1home/cicd/dz/mnt-homeworks/09-ci-03-cicd/example/sonar-scanner-5.0.1.3006-linux/conf/sonar-scanner.properties
-INFO: Project root configuration file: NONE
-INFO: SonarScanner 5.0.1.3006
-INFO: Java 17.0.7 Eclipse Adoptium (64-bit)
-INFO: Linux 5.15.133.1-microsoft-standard-WSL2 amd64
-pat@olZion:~/1home/cicd/dz$
-```
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/2.png)
 
 5. Запустите анализатор против кода из директории [example](./example) с дополнительным ключом `-Dsonar.coverage.exclusions=fail.py`.
 
-<details><summary>sonar-scanner</summary>
-
-```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example# sonar-scanner \
-  -Dsonar.projectKey=netology \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://178.154.200.93:9000 \
-  -Dsonar.login=24dcd473ea58e71933b60b33a5b633331d5460b7 \
-> -Dsonar.coverage.exclusions=fail.py
-
-
-```
-
-</details>
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/3.png)
 
 
 6. Посмотрите результат в интерфейсе.
 
-![monitoring](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/images/9.3-1_SONAR-SCANER-1.png)
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/4.png)
+
 
 7. Исправьте ошибки, которые он выявил, включая warnings.
 
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
 
-<details><summary>sonar-scanner(повторно)</summary>
-
-```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example# sonar-scanner   -Dsonar.projectKey=netology   -Dsonar.sources=.   -Dsonar.host.url=http://178.154.200.93:9000   -Dsonar.login=24dcd473ea58e71933b60b33a5b633331d5460b7 -Dsonar.coverage.exclusions=fail.py
-
-INFO: ------------------------------------------------------------------------
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example#
-
-```
-
-</details>
-
-
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
 
-![monitoring](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/images/9.3-1_SONAR-SCANER-2.png)
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/5.png)
 
 
 
@@ -130,13 +92,13 @@ root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/example#
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 
-![monitoring](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/images/9.3_MAVEN-PUBLIC.png)
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/6.png)
 
 3. Проверьте, что все файлы загрузились успешно.
 
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 
-[maven-metadata.xml](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/maven-metadata.xml)
+[maven-metadata.xml](https://github.com/PatKolzin/9.3_CI-CD-processes/blob/main/maven-metadata.xml)
 
 ```
 <metadata modelVersion="1.1.0">
@@ -184,6 +146,12 @@ sudo unzip -q -d /opt apache-maven-3.9.6-bin.zip &&
 export PATH=$PATH:/opt/apache-maven-3.9.6/bin && 
 export JAVA_HOME=/opt/jdk/jdk-11 && mvn --version
 
+Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+Maven home: /opt/apache-maven-3.9.6
+Java version: 11, vendor: Oracle Corporation, runtime: /opt/jdk/jdk-11
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "5.15.133.1-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+
 ```
 
 
@@ -205,7 +173,16 @@ export JAVA_HOME=/opt/jdk/jdk-11 && mvn --version
 
 4. Проверьте `mvn --version`.
 
+```
+Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+Maven home: /opt/apache-maven-3.9.6
+Java version: 11, vendor: Oracle Corporation, runtime: /opt/jdk/jdk-11
+Default locale: en, platform encoding: UTF-8
+OS name: "linux", version: "5.15.133.1-microsoft-standard-wsl2", arch: "amd64", family: "unix"
+```
+
 5. Заберите директорию [mvn](./mvn) с pom.
+
 
 
 ### Основная часть
@@ -247,10 +224,39 @@ export JAVA_HOME=/opt/jdk/jdk-11 && mvn --version
 <details><summary>Вывод команды mvn package</summary>
 
 ```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/mvn# mvn package
+pat@olZion:~/1home/cicd/dz/mnt-homeworks/09-ci-03-cicd/mvn$ mvn package
 [INFO] Scanning for projects...
-
-
+[INFO]
+[INFO] --------------------< com.netology.app:simple-app >---------------------
+[INFO] Building simple-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.3.1:resources (default-resources) @ simple-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/pat/1home/cicd/dz/mnt-homeworks/09-ci-03-cicd/mvn/src/main/resources
+[INFO]
+[INFO] --- compiler:3.11.0:compile (default-compile) @ simple-app ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ simple-app ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/pat/1home/cicd/dz/mnt-homeworks/09-ci-03-cicd/mvn/src/test/resources
+[INFO]
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ simple-app ---
+[INFO] No sources to compile
+[INFO]
+[INFO] --- surefire:3.2.2:test (default-test) @ simple-app ---
+[INFO] No tests to run.
+[INFO]
+[INFO] --- jar:3.3.0:jar (default-jar) @ simple-app ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.962 s
+[INFO] Finished at: 2024-02-06T16:06:03+03:00
+[INFO] ------------------------------------------------------------------------
 ```
 
 </details>
@@ -258,12 +264,12 @@ root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/mvn# mvn 
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
 
 ```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/mvn# ls ~/.m2/repository/netology/java/8_282/
+pat@olZion:~/.m2/repository/netology/java/8_282/
 java-8_282-distrib.tar.gz	
 java-8_282.pom.lastUpdated
 java-8_282-distrib.tar.gz.sha1	
 _remote.repositories
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/mvn# 
+pat@olZion:~/.m2/repository/netology/java/8_282/ 
 ```
 4. В ответе пришлите исправленный файл `pom.xml`.
 
