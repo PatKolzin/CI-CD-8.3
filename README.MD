@@ -98,7 +98,7 @@ all:
 
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 
-[maven-metadata.xml](https://github.com/PatKolzin/9.3_CI-CD-processes/blob/main/maven-metadata.xml)
+[maven-metadata.xml](https://github.com/PatKolzin/CI-CD-8.3/blob/main/files/maven-metadata.xml)
 
 ```
 <metadata modelVersion="1.1.0">
@@ -115,10 +115,6 @@ all:
 </versioning>
 </metadata>
 ```
-
-![monitoring](https://github.com/12sergey12/9.3_CI-CD-processes/blob/main/images/9.3_MAVEN-PUBLIC_HTML.png)
-
-
 
 ### Знакомство с Maven
 
@@ -272,6 +268,8 @@ _remote.repositories
 pat@olZion:~/.m2/repository/netology/java/8_282/ 
 ```
 4. В ответе пришлите исправленный файл `pom.xml`.
+
+[pom.xml](https://github.com/PatKolzin/CI-CD-8.3/blob/main/files/pom.xml)
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
