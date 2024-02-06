@@ -33,21 +33,7 @@ all:
 
 4. Запустите playbook, ожидайте успешного завершения.
 
-<details><summary>ansible-playbook</summary>
-
-```
-root@baranovsa:/home/baranovsa/9.3_baranov/mnt-homeworks/09-ci-03-cicd/infrastructure# ansible-playbook -i ./inventory/cicd/hosts.yml site.yml
-
-
-PLAY RECAP ***********************************************************************************************
-nexus-01                   : ok=17   changed=15   unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
-sonar-01                   : ok=35   changed=27   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-
-
-```
-
-</details>
-
+![monitoring](https://github.com/PatKolzin/CI-CD-8.3/blob/main/IMG/1.png)
 
 5. Проверьте готовность SonarQube через [браузер](http://localhost:9000).
 
